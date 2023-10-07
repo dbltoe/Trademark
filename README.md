@@ -1,7 +1,7 @@
 # Trademark
 **Adds a Trademark to the Main Page and Mobile Nav Bars**
 
-A recent client had a requirement for their trademark to be plainly shown on all pages of their Zen Cart website. The best answer was to add it to the navMainWrapper in front of the default "Home" declaration for the desktop view and immediately after the "hamburger" on the mobile/tablet menu.  The lawyers say that there is no need for the TM or R symbol.  Just the company name will do whether it is truly a registered trademark or not.
+A recent client had a requirement for their trademark to be plainly shown on all pages of their Zen Cart website. The best answer was to add it to the navMainWrapper in front of the default "Home" declaration for the desktop view and immediately opposite the "hamburger" on the mobile/tablet menu.  The lawyers say that there is no need for the TM or R symbol.  Just the company name will do whether it is truly a registered trademark or not.
 
 This mod has two folders, one for stores using the supplied responsive_classic template (or its clone) and the other for the addon bootstrap template (or its clone).
 
