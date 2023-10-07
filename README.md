@@ -7,7 +7,7 @@ This mod has two folders, one for stores using the supplied responsive_classic t
 
 Each folder has a ReadMe with instructions for that particular template.  Once you've read the instructions select the folder corresponding to your current version of Zen Cart and follow the instructions in that templates ReadMe for installation.
 
-NOTE:  If you have not yet cloned your bootstrap or responsive_classic template, we recommend you do that before you install this mod.  Get lat9' excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
+NOTE:  If you have not yet cloned your bootstrap or responsive_classic template, we recommend you do that before you install this mod.  Get lat9's excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
 
 As always, no warranty or guarantee is applied or implied.
 
