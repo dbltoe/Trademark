@@ -32,3 +32,7 @@ font-weight:normal;
 Note the capital M in trademark for the class definition.  This is not a typo but used just in case your template already has a trademark class in its CSS.
 
 You will need to adjust the color, font-size, and font-weight to meet your specific styling needs.
+
+As always, no warranty or guarantee is applied or implied.
+
+**ALWAYS MAKE BACKUPS BEFORE ADDING/EDITING ANY MOD.**
