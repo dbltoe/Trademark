@@ -27,10 +27,18 @@ Each of the includes/templates/YOUR_TEMPLATE/common/tpl_header.php files supplie
 
 For those using responsive_classic or its clone, we recommend the creation of a stylesheet_zcustom.css and adding the CSS code for this mod.
 
-For those using bootstrap or its clone, if you have not already copied the dist-site_specific_styles.php file to  site_specific_styles.php, do that first.  Then add the CSS code for this mod.
+For those using Bootstrap or its clone, if you have not already copied the dist-site_specific_styles.php file to  site_specific_styles.php, do that first.  Then add the CSS code for this mod.
 
-The element that needs to be added to your particular CSS file for all versions of this mod is: `.tradeMark {float:left;margin:0;padding:0;}`
+The element that needs to be added to your particular CSS file for all versions of this mod is:
+`.tradeMark {
+float:left;
+margin:0;
+padding:0;
+color: #FFFFFF;
+font-size: 1em;
+font-weight:normal;
+}`
 
 Note the capital M in trademark.  This is not a typo but used just in case your template already has a trademark class in its CSS.
 
-This results in text with the default color assigned to the body of your template (generally white/#FFFFFF).  If you want/need a different color for the text, simply add `color:#******;` to the CSS where ****** is the hexadecimal code for the desired color.  Keep color contrast of at least 4.5 to 1 when choosing your text color.
+You will need to adjust the color, font-size, and font-weight to meet your specific styling needs.
