@@ -1,7 +1,7 @@
 # Trademark Files for the Zen Cart Bootstrap Template
 **Adds a Trademark to the Main Page and Mobile Nav Bars**
 
-This has two folders, one for stores using version 1.5.7d of Zen Cart and the other for 1.5.8a or newer.  This due to the change in language file formats in 1.5.8 and later.
+This has two folders, one for stores using version 1.5.7d of Zen Cart and the other for 1.5.8a or newer.  This is due to the change in language file formats in 1.5.8 and later.
 
 NOTE:  If you have not yet cloned your bootstrap or responsive_classic template, we recommend you do that before you install this mod.  Get lat9' excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
 
@@ -9,7 +9,7 @@ Pick the folder for your version of Zen Cart.
 
 NOTE: Although this mod works with the 2.0.0 beta as of 5 Oct 2023, beta files should only be used in a test environment and the procedures listed here for 2.0.0 may change upon its final release.
 
-There is one new language file for 1.5.7d and one for 1.5.8a or newer.  This is due to the changes in language defines which started with 1.5.8.  The files do not overwrite any corefiles and can be simply added to your current files.
+There is one new language file for 1.5.7d and one for 1.5.8a or newer.  This is due to the changes in language defines which started with 1.5.8.  The files do not overwrite any core files and can be simply added to your current files. You will need to change HEADER_TITLE_TRADEMARK in the language file to reflect the company name you want to appear on the navBar.  NOTE:  Since it's a define, special characters like & do not require special coding.
 
 The changes in the includes/templates/YOUR_TEMPLATE/common/tpl.header.php are as follows:
 
