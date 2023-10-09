@@ -13,9 +13,7 @@ NOTE: Although this mod works with the 2.0.0 beta as of 5 Oct 2023, beta files s
 
 There is one new file and one core file overwrite for each version.  With the tpl.header.php files, we are providing updated files for each version that have some important changes.  Carefully merge your template's existing file to ensure a smooth process.
 
-For BOTH templates using version 1.5.7d, the includes/languages/english/extra_definitions/trademark_definitions.php does not overrite any file BUT, you will need to modify line 14 to set the HEADER_TITLE_TRADEMARK to the actual name of your company.
-
-The language files are designed to just drop in and not affect core files.
+There is one new language file for 1.5.7d and one for 1.5.8a or newer.  This is due to the changes in language defines which started with 1.5.8.  The files do not overwrite any core files and can be simply added to your current files. You will need to change HEADER_TITLE_TRADEMARK in the language file to reflect the company name you want to appear on the navBar.  NOTE:  Since it's a define, special characters like & do not require special coding.
 
 For those using responsive_classic or its clone, we recommend the creation of a stylesheet_zcustom.css and adding the CSS code for this mod.
 
@@ -29,7 +27,7 @@ font-size: 1em;
 font-weight:normal;
 }`
 
-Note the capital M in trademark for the class definition.  This is not a typo but used just in case your template already has a trademark class in its CSS.
+Note the capital M in trade**M**ark for the class definition.  This is not a typo but used just in case your template already has a trademark class in its CSS.
 
 You will need to adjust the color, font-size, and font-weight to meet your specific styling needs.
 
