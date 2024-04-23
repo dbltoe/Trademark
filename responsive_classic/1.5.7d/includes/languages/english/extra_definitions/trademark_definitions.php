@@ -11,5 +11,5 @@
 
 
 // Company TradeMark Name
-define('HEADER_TITLE_TRADEMARK','Your Company Name');
+define('HEADER_TITLE_TRADEMARK',STORE_NAME);
 ?>
