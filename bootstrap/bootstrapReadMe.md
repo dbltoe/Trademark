@@ -4,7 +4,7 @@
 NOTE:  If you have not yet cloned your bootstrap template, we recommend cloning it before installing this mod.  Get lat9's excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
 
 ### Core File Additions
-The changes in the includes/templates/YOUR_TEMPLATE/common/tpl.header.php (YOUR_TEMPLATE would be your cloned bootstrap folder) now include the automatic inclusion of the STORE_NAME, and the changes for your version of ZCA Bootstrap are as follows:
+Since ZCA Bootstrap is constantly improving, we are providing code to be added in specific places in the ZCA Bootstrap files. The changes in the includes/templates/YOUR_TEMPLATE/common/tpl.header.php (YOUR_TEMPLATE would be your cloned bootstrap folder) now include the automatic inclusion of the STORE_NAME, and the changes for your version of ZCA Bootstrap are as follows:
 
 **For bootstrap versions 3.3.0 to 3.4.1**
 Replace the blank line after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom">` with `<p class="tradeMark"><?php echo STORE_NAME; ?></p>`.
@@ -40,6 +40,7 @@ You will need to adjust the color, font-size, and font-weight to meet your speci
 As always, no warranty or guarantee is applied or implied.
 
 **ALWAYS MAKE BACKUPS BEFORE ADDING/EDITING ANY MOD.**
+
 
 
 
