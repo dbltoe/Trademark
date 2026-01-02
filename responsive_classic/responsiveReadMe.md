@@ -27,7 +27,7 @@ font-weight:normal;
 
 Note the capital M in trade**M**ark for the class definition.  This is not a typo, but used just in case your template already has a trademark class in its CSS.
 
-You will need to adjust the color, font-size, and font-weight to meet your specific styling needs while ensuring you meet [accessibility contrast standards](https://docs.zen-cart.com/user/accessibility/accessibility/#what-is-accessibility).
+You will need to adjust the color, font-size, and font-weight to meet your specific styling needs while ensuring you meet [accessibility contrast standards](https://docs.zen-cart.com/user/accessibility/accessibility/#what-is-accessibility).>>>>>>> main
 
 As always, no warranty or guarantee is applied or implied.
 
