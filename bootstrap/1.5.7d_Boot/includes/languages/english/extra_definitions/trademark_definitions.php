@@ -11,5 +11,6 @@
 
 
 // Company TradeMark Name
-define('BOX_HEADING_EZPAGES','Important Links');
+define('HEADER_TITLE_TRADEMARK',STORE_NAME);
+
 ?>
