@@ -19,6 +19,12 @@ Replace the blank line after `<nav class="navbar fixed-top mx-3 navbar-expand-lg
 **For bootstrap versions 3.5.0 to 3.6.0**
 Add a new line 28 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
 
+**For bootstrap versions 3.6.1 to 3.6.5**
+Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
+
+**For bootstrap versions 3.7.0 to 3.7.8**  **NOTE: These versions DO NOT SUPPORT Zen Cart versions prior to 1.5.8.**
+Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
+
 For Bootstrap, we recommend renaming or copying includes/templates/YOUR_TEMPLATE/css/dist-site_specific_styles.php to site_specific_styles.php.  Keeping your custom CSS code there makes troubleshooting and updating much easier.
 
 The element that needs to be added to your site_specific_styles.php file for all versions of this mod is:
@@ -38,3 +44,4 @@ You will need to adjust the color, font-size, and font-weight to meet your speci
 As always, no warranty or guarantee is applied or implied.
 
 **ALWAYS MAKE BACKUPS BEFORE ADDING/EDITING ANY MOD.**
+
