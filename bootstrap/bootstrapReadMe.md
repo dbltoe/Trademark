@@ -1,29 +1,21 @@
 # Trademark Files for the Zen Cart Bootstrap Template
 **Adds a Trademark to the Main Page and Mobile Nav Bars**
 
-This has two folders, one for stores using version 1.5.7d of Zen Cart and the other for 1.5.8a or newer.  This is due to the change in language file formats in 1.5.8 and later.
+NOTE:  If you have not yet cloned your bootstrap template, we recommend cloning it before installing this mod.  Get lat9's excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
 
-NOTE:  If you have not yet cloned your bootstrap or responsive_classic template, we recommend cloning it before installing this mod.  Get lat9's excellent [Clone a Template](https://www.zen-cart.com/downloads.php?do=file&id=2087) to do the job.
-
-Pick the folder for your version of Zen Cart.
-
-NOTE: Although this mod works with the 2.0.0 beta as of 5 Oct 2023, beta files should only be used in a test environment, and the procedures listed here for 2.0.0 may change upon its final release.
-
-There is one new language file for 1.5.7d and one for 1.5.8a or newer.  This is due to the changes in language defines which started with 1.5.8.  The files do not overwrite any core files and can be simply added to your current files. You will need to change HEADER_TITLE_TRADEMARK in the language file to reflect the company name you want to appear on the navBar.  NOTE:  Since it's a define, special characters like & do not require special coding.
-
-The changes in the includes/templates/YOUR_TEMPLATE/common/tpl.header.php are as follows:
+The changes in the includes/templates/YOUR_TEMPLATE/common/tpl.header.php now include the automatic inclusion of the STORE_NAME, and the changes for your version of ZCA Bootstrap are as follows:
 
 **For bootstrap versions 3.3.0 to 3.4.1**
-Replace the blank line after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom">` with `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`.
+Replace the blank line after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom">` with `<p class="tradeMark"><?php echo STORE_NAME; ?></p>`.
 
 **For bootstrap versions 3.5.0 to 3.6.0**
-Add a new line 28 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
+Add a new line 28 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo STORE_NAME; ?></p>`
 
 **For bootstrap versions 3.6.1 to 3.6.5**
-Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
+Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo STORE_NAME; ?></p>`
 
-**For bootstrap versions 3.7.0 to 3.7.8**  **NOTE: These versions DO NOT SUPPORT Zen Cart versions prior to 1.5.8.**
-Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo HEADER_TITLE_TRADEMARK; ?></p>`
+**For bootstrap versions 3.7.0 to 3.7.8**  **NOTE: These versions DO NOT SUPPORT Zen Cart versions before 1.5.8.**
+Add a new line 26 after `<nav class="navbar fixed-top mx-3 navbar-expand-lg rounded-bottom" aria-label="<?php echo TEXT_HEADER_ARIA_LABEL_NAVBAR; ?>">` and add `<p class="tradeMark"><?php echo STORE_NAME; ?></p>`
 
 For Bootstrap, we recommend renaming or copying includes/templates/YOUR_TEMPLATE/css/dist-site_specific_styles.php to site_specific_styles.php.  Keeping your custom CSS code there makes troubleshooting and updating much easier.
 
@@ -44,5 +36,6 @@ You will need to adjust the color, font-size, and font-weight to meet your speci
 As always, no warranty or guarantee is applied or implied.
 
 **ALWAYS MAKE BACKUPS BEFORE ADDING/EDITING ANY MOD.**
+
 
 
