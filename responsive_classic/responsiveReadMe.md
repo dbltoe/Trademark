@@ -29,6 +29,7 @@ Note the capital M in trade**M**ark for the class definition.  This is not a typ
 
 You will need to adjust the color, font-size, and font-weight to meet your specific styling needs while ensuring you meet [accessibility contrast standards](https://docs.zen-cart.com/user/accessibility/accessibility/#what-is-accessibility).
 
+### Legal Stuff
 As always, no warranty or guarantee is applied or implied.
 
 **ALWAYS MAKE BACKUPS BEFORE ADDING/EDITING ANY MOD.**
