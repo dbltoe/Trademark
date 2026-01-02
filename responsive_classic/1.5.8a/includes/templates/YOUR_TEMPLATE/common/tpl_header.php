@@ -43,9 +43,9 @@ if (isset($flag_disable_header) && $flag_disable_header === true) {
 <div id="navMainWrapper" class="group onerow-fluid">
 <?php 
 if ($detect->isMobile() && !$detect->isTablet() || $_SESSION['layoutType'] == 'mobile') {
-    echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bars"></i></a><p class="tradeMark">' . HEADER_TITLE_TRADEMARK . '</p></div>';
+    echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bars"></i></a><p class="tradeMark">' . STORE_NAME . '</p></div>';
 } else if ($detect->isTablet() || $_SESSION['layoutType'] == 'tablet') {
-    echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bars"></i></a><p class="tradeMark">' . HEADER_TITLE_TRADEMARK . '</p></div>';
+    echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bars"></i></a><p class="tradeMark">' . STORE_NAME . '</p></div>';
 } else { 
     // Handle the case when neither mobile nor tablet
 }
