@@ -1,4 +1,4 @@
-# Trademark
+# Trademark 1.1.0
 ## Adds a Trademark to the Main Page Nav Bar and Mobile Nav Bars
 ### The Story Behind the Creation
 A client required their trademark to be plainly shown on all pages of their Zen Cart website. Most of our sites do not use the logoWrapper to show more of the product on a page.  The site's logo is generally moved to the define_main_page.php.  The best solution we found was to add it to the navMainWrapper, in front of the default "Home" declaration for the desktop view, and immediately opposite the "hamburger" on the mobile/tablet menu.  The lawyers say that there is no need for the TM or R symbol.  Just the company name will do whether it is truly a registered trademark or not.
