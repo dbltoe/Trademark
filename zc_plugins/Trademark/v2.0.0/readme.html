@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trademark &mdash; Read Me</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#1f2328; --muted:#57606a; --rule:#d8dee4;
+  --panel:#f6f8fa; --accent:#0969da; --warn-bg:#fff8c5; --warn-br:#d4a72c;
+  --code-bg:#f0f2f4;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --rule:#30363d;
+    --panel:#161b22; --accent:#4493f8; --warn-bg:#2d2200; --warn-br:#9e6a03;
+    --code-bg:#161b22;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:52rem;margin:0 auto;padding:2rem 1.25rem 5rem}
+header{border-bottom:1px solid var(--rule);padding-bottom:1.25rem;margin-bottom:1.5rem}
+h1{font-size:1.75rem;margin:0 0 .3rem}
+.tagline{color:var(--muted);margin:0}
+.meta{color:var(--muted);font-size:.875rem;margin:.75rem 0 0}
+.meta a{color:var(--accent)}
+h2{font-size:1.25rem;margin:2.5rem 0 .75rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+h3{font-size:1.02rem;margin:1.75rem 0 .5rem}
+p,ul,ol{margin:0 0 1rem}
+ul,ol{padding-left:1.4rem}
+li{margin:.3rem 0}
+a{color:var(--accent)}
+code{background:var(--code-bg);padding:.12em .38em;border-radius:4px;
+     font:.87em/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+pre{background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+    padding:.85rem 1rem;overflow-x:auto;margin:0 0 1rem}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:0 0 1.25rem;font-size:.94rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--rule);padding:.45rem .65rem;text-align:left;vertical-align:top}
+th{background:var(--panel);white-space:nowrap}
+td:first-child{white-space:nowrap}
+.note{background:var(--panel);border-left:4px solid var(--accent);
+      border-radius:0 6px 6px 0;padding:.8rem 1rem;margin:0 0 1.25rem}
+.warn{background:var(--warn-bg);border-left:4px solid var(--warn-br);
+      border-radius:0 6px 6px 0;padding:.8rem 1rem;margin:0 0 1.25rem}
+.note p:last-child,.warn p:last-child{margin-bottom:0}
+nav{background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+    padding:.9rem 1rem;margin:0 0 1.5rem}
+nav p{margin:0 0 .4rem;font-weight:600;font-size:.9rem}
+nav ul{margin:0;padding-left:1.2rem;columns:2;column-gap:2rem}
+nav li{margin:.15rem 0;font-size:.92rem;break-inside:avoid;page-break-inside:avoid}
+footer{margin-top:3rem;padding-top:1.25rem;border-top:1px solid var(--rule);
+       color:var(--muted);font-size:.875rem}
+.layout{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Trademark</h1>
+  <p class="tagline">Shows your trademark &mdash; your store name unless you say otherwise &mdash; in the navigation bar of every storefront page. No template file is changed.</p>
+  <p class="meta">
+    By My Zen Cart Host (dbltoe) &nbsp;&middot;&nbsp;
+    Version 2.0.0 &nbsp;&middot;&nbsp; Zen Cart v1.5.8 &ndash; v3.0.0 &nbsp;&middot;&nbsp;
+    GPL-2.0 &nbsp;&middot;&nbsp;
+    <a href="https://github.com/dbltoe/Trademark" target="_blank" rel="noopener noreferrer">github.com/dbltoe/Trademark</a> &nbsp;&middot;&nbsp;
+    <a href="https://www.zen-cart.com/threads/205827/" target="_blank" rel="noopener noreferrer">Forum support thread</a>
+  </p>
+</header>
+
+<nav>
+  <p>On this page</p>
+  <ul>
+    <li><a href="#what">What it does</a></li>
+    <li><a href="#why">Why it exists</a></li>
+    <li><a href="#install">Installing</a></li>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#where">Where the mark goes</a></li>
+    <li><a href="#custom">Any other template: the custom anchor</a></li>
+    <li><a href="#styling">Styling</a></li>
+    <li><a href="#howitworks">How it works</a></li>
+    <li><a href="#oldmod">Upgrading from the file-based mod</a></li>
+    <li><a href="#upgrade">Upgrading the plugin</a></li>
+    <li><a href="#uninstall">Uninstalling</a></li>
+    <li><a href="#trouble">Troubleshooting</a></li>
+    <li><a href="#compat">Compatibility</a></li>
+  </ul>
+</nav>
+
+<h2 id="what">What it does</h2>
+
+<p>It puts one short line of text at the top of every storefront page, in the navigation bar, where a visitor can't miss it:</p>
+
+<pre class="layout">  Desktop, responsive_classic:
+
+  Stoke &amp; Trent Kayaks   Home | Log In                    [ search ]
+
+  Phone, responsive_classic:
+
+  [&#9776;] Stoke &amp; Trent Kayaks                    [home] [top] [login]
+
+  ZCA Bootstrap, any device:
+
+  Stoke &amp; Trent Kayaks   [&#9776;]  Home  Log In  ...</pre>
+
+<p>The text is your store name, taken from <em>Configuration &rarr; My Store &rarr; Store Name</em>. If the mark you have to show is something other than your store name, there's a setting for that. There's also an optional &trade;, &reg; or &#8480; after it, and you can pick the color, size and weight.</p>
+
+<p>Install it and it's there. Nothing to configure unless you want to.</p>
+
+<h2 id="why">Why it exists</h2>
+
+<p>A client's lawyers required the company's trademark to be plainly shown on every page of the site. Many of our stores don't use the logo wrapper &mdash; the logo is moved into the home page to make room for the products &mdash; so there wasn't a reliable spot that appeared everywhere. The navigation bar is on every page, on every device, so that's where the mark goes: ahead of <em>Home</em> on a desktop, right beside the menu icon on a phone.</p>
+
+<p>The lawyers also said the &trade; or &reg; symbol isn't needed. The company name alone does the job, whether or not it's a registered mark. So the default is the bare name, and the symbol is opt-in.</p>
+
+<p>Earlier versions of this mod did the job by replacing <code>tpl_header.php</code> in your template, one copy per Zen Cart version, plus hand edits for ZCA Bootstrap. This version is a proper zc_plugin: it installs from Plugin Manager, touches no template file, and runs unchanged on Zen Cart v1.5.8 through v3.0.0.</p>
+
+<h2 id="install">Installing</h2>
+
+<ol>
+  <li>Upload the <code>zc_plugins/Trademark/</code> directory from this package so it lands at <code>&lt;your store&gt;/zc_plugins/Trademark/v2.0.0/</code>. Nothing goes anywhere else.</li>
+  <li>In your admin, go to <strong>Modules &rarr; Plugin Manager</strong>, select <strong>Trademark</strong>, and click <strong>Install</strong>.</li>
+  <li>Reload your storefront.</li>
+</ol>
+
+<p>That's it. The mark is on every page, showing your store name, in white, at the same size as the navigation links.</p>
+
+<div class="note">
+<p>Selecting the plugin in Plugin Manager shows an info panel on the right. Next to <strong>Install / Uninstall / Disable</strong> you'll find <strong>Read Me</strong> (this page) and <strong>GitHub</strong> buttons. Both work before installing.</p>
+</div>
+
+<p>If your store's name is empty in <em>Configuration &rarr; My Store</em>, nothing appears until you either set it or enter something in <strong>Trademark Text</strong>. A store with no name has nothing to show.</p>
+
+<h2 id="settings">Settings</h2>
+
+<p>All under <strong>Configuration &rarr; Trademark</strong>. Twelve settings, and the defaults are right for most stores.</p>
+
+<h3>What it says</h3>
+
+<table>
+<tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+<tr><td>Enable Trademark?</td><td><code>true</code></td><td>Master switch. <code>false</code> hides the mark on every page without uninstalling. While it's off, Plugin Manager lists the plugin as <em>Trademark - Mod Not Turned On</em> so a switched-off mark can't be forgotten.</td></tr>
+<tr><td>Trademark Text:</td><td><em>empty</em></td><td>Empty means your store name. Enter something here only if the mark you must display is different from the store name.</td></tr>
+<tr><td>Append A Symbol?</td><td><code>None</code></td><td><code>TM</code>, <code>R</code> or <code>SM</code> adds &trade;, &reg; or &#8480; after the text as a small superscript. Use <code>R</code> only for a mark that's actually registered.</td></tr>
+</table>
+
+<h3>Where it goes</h3>
+
+<table>
+<tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+<tr><td>Show In The Main Navigation Bar?</td><td><code>true</code></td><td>responsive_classic: ahead of <em>Home</em> in the top navigation, on desktops and on tablets held in landscape. ZCA Bootstrap: first item in the navbar, on every device.</td></tr>
+<tr><td>Show In The Mobile Header Bar?</td><td><code>true</code></td><td>responsive_classic only: beside the menu icon in the fixed bar that phones, and tablets in portrait, get across the top. Set to <code>false</code> and phones show no mark at all &mdash; there's nowhere else on a phone to put it.</td></tr>
+<tr><td>Custom Anchor (Advanced):</td><td><em>empty</em></td><td>For any other template, or to choose a different spot: <code>id=navMain</code> or <code>class=navbar</code>. See <a href="#custom">the custom anchor</a>. When set, the two settings above are ignored.</td></tr>
+<tr><td>Custom Anchor Position:</td><td><code>After</code></td><td><code>After</code> puts the mark inside the anchored element as its first item; <code>Before</code> puts it just ahead of the element.</td></tr>
+<tr><td>Show At The Top Of The Page If Nothing Matches?</td><td><code>false</code></td><td>If a page has none of the places above, <code>true</code> puts the mark at the very top of the page body so it's still shown. Off by default because an unplanned spot usually looks wrong.</td></tr>
+</table>
+
+<h3>How it looks</h3>
+
+<table>
+<tr><th>Setting</th><th>Default</th><th>What it does</th></tr>
+<tr><td>Load The Plugin Stylesheet?</td><td><code>true</code></td><td>Links the plugin's small stylesheet and applies the three settings below. Set to <code>false</code> if your template already styles <code>.tradeMark</code> in its own CSS &mdash; for example from the file-based version of this mod.</td></tr>
+<tr><td>Text Color:</td><td><code>#FFFFFF</code></td><td>Any CSS color. White suits the dark bars in responsive_classic and ZCA Bootstrap. Something that doesn't look like a color is ignored and white is used.</td></tr>
+<tr><td>Font Size:</td><td><code>1em</code></td><td>Any CSS size. <code>1em</code> matches the links around it.</td></tr>
+<tr><td>Font Weight:</td><td><code>normal</code></td><td>Or <code>bold</code>.</td></tr>
+</table>
+
+<div class="warn">
+<p><strong>Check the contrast.</strong> White on responsive_classic's dark gray bar is fine. If your template's bar is a lighter color, pick a text color that meets <a href="https://docs.zen-cart.com/user/accessibility/accessibility/#what-is-accessibility" target="_blank" rel="noopener noreferrer">accessibility contrast standards</a>; a trademark nobody can read isn't plainly shown.</p>
+</div>
+
+<h2 id="where">Where the mark goes</h2>
+
+<p>The plugin looks at each page as it goes out and inserts the mark next to markup it recognizes. Out of the box it recognizes two templates, and clones of either.</p>
+
+<h3>responsive_classic</h3>
+
+<p>Zen Cart's own template lays its header out three ways, and the plugin follows each:</p>
+
+<table>
+<tr><th>Device</th><th>Where</th></tr>
+<tr><td>Desktop</td><td>Inside the first entry of the top navigation, ahead of the <em>Home</em> link. It floats left, so it reads <em>Stoke &amp; Trent Kayaks &nbsp;Home | Log In</em>.</td></tr>
+<tr><td>Phone</td><td>In the fixed bar at the top, right after the menu icon. The icon strip that the template lays over that bar is left alone, because a mark in it would sit on top of the one beside the icon.</td></tr>
+<tr><td>Tablet</td><td>Both. In portrait the template shows the fixed bar and the mark beside the icon is the one you see. In landscape the template hides that bar and turns the strip into an ordinary navigation row, and the mark ahead of <em>Home</em> is the one you see. The plugin adds the second copy with an extra class that its stylesheet hides in portrait, using the same orientation query the template itself uses.</td></tr>
+</table>
+
+<p>This is the same markup in the v1.5.8, v2.0, v2.1, v2.2, v2.3 and v3.0 templates, checked against each rather than assumed.</p>
+
+<h3>ZCA Bootstrap</h3>
+
+<p>The mark becomes the first item inside the header <code>&lt;nav class="navbar ..."&gt;</code>, ahead of the menu toggler and the menu itself. On a desktop that reads <em>Stoke &amp; Trent Kayaks &nbsp;Home &nbsp;Log In ...</em>; on a phone it's the name at the left and the toggler at the right. That's the same spot the old hand-edit instructions put it. Bootstrap versions 3.3.0 through 3.8.0 all open the navbar the same way.</p>
+
+<h3>A clone of either</h3>
+
+<p>Works the same, as long as the clone kept the header markup. If you've reworked the header, use the <a href="#custom">custom anchor</a>.</p>
+
+<h2 id="custom">Any other template: the custom anchor</h2>
+
+<p>For a template the plugin doesn't know, or to put the mark somewhere else in one it does, name the element you want it in. Open your storefront, view the page source, find the element, and put its id or class into <strong>Custom Anchor (Advanced)</strong>:</p>
+
+<pre><code>id=navMain
+class=navbar</code></pre>
+
+<p><code>id=</code> matches the first element on the page with exactly that id. <code>class=</code> matches the first element whose class list contains that word (so <code>class=navbar</code> finds <code>&lt;nav class="navbar fixed-top ..."&gt;</code>). The mark goes inside that element as its first item, or just ahead of the element if you set <strong>Custom Anchor Position</strong> to <code>Before</code>.</p>
+
+<p>An exact fragment of the page's HTML, such as <code>&lt;!--bof-navigation display--&gt;</code>, also works: the mark goes immediately after (or before) the first place it occurs. But on Zen Cart 2.2 and later the settings page saves the whole group through one form, and Zen Cart's input filter strips <code>="</code> from whatever you type in it, so a fragment with a quoted attribute can't be entered there. The <code>id=</code> and <code>class=</code> forms have no quote to strip and work on every release, which is why they're the ones to use.</p>
+
+<p>A few things worth knowing:</p>
+
+<ul>
+  <li>Only the first match on a page is used.</li>
+  <li>Choose an element that's on every page. The home page's banner isn't on the product pages; the header and navigation usually are.</li>
+  <li>While the anchor is set, the two "Show In ..." settings are ignored: you've said where the mark goes.</li>
+  <li>If a page doesn't contain the anchor, that page gets no mark &mdash; unless <strong>Show At The Top Of The Page If Nothing Matches?</strong> is on.</li>
+  <li>The anchor is only ever compared against the page. It's never printed.</li>
+</ul>
+
+<p>You'll probably want to look at <a href="#styling">styling</a> afterwards: the shipped stylesheet floats the mark left, which suits a navigation bar and may not suit wherever you've put it.</p>
+
+<h2 id="styling">Styling</h2>
+
+<p>The mark is:</p>
+
+<pre><code>&lt;p class="tradeMark"&gt;Stoke &amp;amp; Trent Kayaks&lt;/p&gt;</code></pre>
+
+<p>with <code>&lt;sup class="tradeMarkSymbol"&gt;</code> inside it when a symbol is on. The capital <strong>M</strong> in <code>tradeMark</code> is deliberate: it's the class the file-based version of this mod used, so a store's existing CSS for it keeps working, and it stays clear of any <code>trademark</code> class a template might define for its own purposes.</p>
+
+<p>Color, size and weight come from the admin settings, written into the page as one inline rule. Everything else &mdash; the float, zero margin and padding, the tablet orientation rule &mdash; is in the plugin's stylesheet:</p>
+
+<pre><code>zc_plugins/Trademark/v2.0.0/catalog/includes/templates/template_default/css/trademark.css</code></pre>
+
+<p>Three ways to change it, in increasing order of commitment:</p>
+
+<ol>
+  <li><strong>Use the settings.</strong> Color, size and weight cover most needs.</li>
+  <li><strong>Add rules to your template's own CSS.</strong> Zen Cart loads every <code>style*.css</code> in your template's <code>css/</code> folder, but the plugin's link goes into <code>&lt;head&gt;</code> after them, so a plain rule of yours would lose. Either raise the specificity (<code>#navMain .tradeMark { ... }</code>) or use the next option.</li>
+  <li><strong>Take over the stylesheet.</strong> Copy <code>trademark.css</code> into <code>includes/templates/YOUR_TEMPLATE/css/</code>. The plugin links that copy instead of its own. Then, if you'd rather set color and size in CSS too, switch <strong>Load The Plugin Stylesheet?</strong> off; nothing of the plugin's is linked and your template's CSS is all there is.</li>
+</ol>
+
+<h2 id="howitworks">How it works</h2>
+
+<p>Zen Cart doesn't fire a notifier inside <code>tpl_header.php</code> on any supported release, and a zc_plugin can't supply a template override. What every release does have is a notifier at the end of <code>&lt;head&gt;</code> and another at the end of <code>&lt;body&gt;</code>. The plugin opens an output buffer at the first and closes it at the second, and on the way out it looks for the header markup it recognizes and inserts the mark beside it. The page is otherwise byte for byte what your template produced.</p>
+
+<p>That's why nothing in your template is edited, copied or overridden, why it works with a clone of either template as long as the header markup survived, and why uninstalling leaves nothing behind.</p>
+
+<p>Two safeguards are worth knowing about. If a page already contains a <code>class="tradeMark"</code> element &mdash; a template still carrying the file-based mod's edits &mdash; the plugin adds nothing, so the two can never double up. And the buffer is closed only if it's the plugin's own; if something else opened one and left it open, the plugin leaves both for PHP to close at the end of the request, and the mark is still inserted then.</p>
+
+<h2 id="oldmod">Upgrading from the file-based mod (1.1.0 and earlier)</h2>
+
+<p>Versions 1.0.x and 1.1.0 of this mod weren't a plugin. They replaced a file in your template and, depending on the version, added a language file and a CSS rule. The plugin needs none of that, and the old header edit actually stops the plugin working: it sees the mark your template already carries and adds nothing. So the old pieces have to come out. This section is the complete list.</p>
+
+<h3>What the old versions put on your store</h3>
+
+<table>
+<tr><th>File</th><th>Which versions</th><th>What to do</th></tr>
+<tr><td><code>includes/templates/YOUR_TEMPLATE/common/tpl_header.php</code></td><td>All. responsive_classic: the whole file was replaced. ZCA Bootstrap: one line was added by hand after the <code>&lt;nav&gt;</code> tag.</td><td>Restore or edit &mdash; step 2 below.</td></tr>
+<tr><td><code>includes/languages/english/extra_definitions/lang.trademark.php</code></td><td>1.0.x on Zen Cart 1.5.8 and 2.0, both templates. (1.1.0 stopped shipping it but never said to delete it.)</td><td>Delete &mdash; step 3 below, <strong>after</strong> step 2.</td></tr>
+<tr><td><code>includes/languages/english/extra_definitions/trademark_definitions.php</code></td><td>1.0.x on Zen Cart 1.5.7, both templates.</td><td>Delete &mdash; step 3 below, <strong>after</strong> step 2.</td></tr>
+<tr><td><code>includes/templates/YOUR_TEMPLATE/common/tpl_header.php.bak</code></td><td>One 1.0.x package for 1.5.8 carried this by mistake.</td><td>Delete if present.</td></tr>
+<tr><td>A <code>.tradeMark { ... }</code> rule in <code>includes/templates/YOUR_TEMPLATE/css/stylesheet_zcustom.css</code> (responsive_classic) or <code>css/site_specific_styles.php</code> (ZCA Bootstrap)</td><td>All, added by hand from the readme.</td><td>Your choice &mdash; step 4 below.</td></tr>
+</table>
+
+<p>The old mod made no database changes, added nothing to the admin, and changed no permissions, so there's nothing to reverse there. If you have a language other than English, look for the same two language file names under that language's <code>extra_definitions</code> folder as well.</p>
+
+<h3>The steps, in this order</h3>
+
+<ol>
+  <li><strong>Install the plugin first</strong>, from Plugin Manager. Your storefront doesn't change yet, because the plugin steps aside while the old mark is in the page. This means there's never a moment with no mark showing.</li>
+  <li><strong>Put the header back.</strong>
+    <ul>
+      <li><em>responsive_classic, if you used the shipped file unchanged:</em> replace <code>includes/templates/YOUR_TEMPLATE/common/tpl_header.php</code> with the stock copy for your Zen Cart version, which is <code>includes/templates/responsive_classic/common/tpl_header.php</code> from the Zen Cart download. If your template is a clone that only ever changed this file for the trademark, you can delete the clone's copy instead; Zen Cart then uses the stock one.</li>
+      <li><em>responsive_classic, if you merged the changes into a customized file:</em> there are three edits to undo. In the two <code>echo '&lt;div class="header Fixed"&gt;...</code> lines, remove <code>&lt;p class="tradeMark"&gt;' . STORE_NAME . '&lt;/p&gt;</code>. In the navigation list, change
+        <pre><code>&lt;li&gt;&lt;?php echo '&lt;p class="tradeMark"&gt;' . HEADER_TITLE_TRADEMARK . '&lt;/p&gt;&lt;a href="' . HTTP_SERVER . DIR_WS_CATALOG . '"&gt;'; ?&gt;</code></pre>
+        back to
+        <pre><code>&lt;li&gt;&lt;?php echo '&lt;a href="' . HTTP_SERVER . DIR_WS_CATALOG . '"&gt;'; ?&gt;</code></pre>
+        wherever it occurs (once or twice depending on the version).</li>
+      <li><em>ZCA Bootstrap:</em> open <code>tpl_header.php</code> in your cloned template and delete the one line <code>&lt;p class="tradeMark"&gt;&lt;?php echo STORE_NAME; ?&gt;&lt;/p&gt;</code> that follows the <code>&lt;nav class="navbar ...&gt;</code> tag.</li>
+    </ul>
+    Reload the storefront. The plugin's mark is now the one you see, in the same spot.</li>
+  <li><strong>Now delete the language file</strong>, if you have one: <code>lang.trademark.php</code> or <code>trademark_definitions.php</code> under <code>includes/languages/english/extra_definitions/</code>. Do this only after step 2. That file defines <code>HEADER_TITLE_TRADEMARK</code>, and while the old header is still in place, removing the definition is what turns the phone and tablet layouts into a blank page on PHP 8.</li>
+  <li><strong>Decide about the CSS.</strong> The old readme had you add a <code>.tradeMark</code> rule to <code>stylesheet_zcustom.css</code> or <code>site_specific_styles.php</code>. Either delete it and use the plugin's <strong>Text Color</strong>, <strong>Font Size</strong> and <strong>Font Weight</strong> settings, or keep it and set <strong>Load The Plugin Stylesheet?</strong> to <code>false</code> so the plugin doesn't override it. Don't keep both: the plugin's inline rule is later in <code>&lt;head&gt;</code> and would win.</li>
+  <li>Delete <code>tpl_header.php.bak</code> if it's there. Zen Cart ignores it, but it's clutter.</li>
+</ol>
+
+<div class="note">
+<p><strong>If your phone or tablet layout is already a blank page</strong>, you're on 1.1.0 (or deleted the language file early). That's the <code>HEADER_TITLE_TRADEMARK</code> fatal. Do step 2 now and it's fixed; the plugin can be installed before or after.</p>
+</div>
+
+<p>Removing the plugin itself later is a separate, simpler matter: see <a href="#uninstall">Uninstalling</a>.</p>
+
+<h2 id="upgrade">Upgrading the plugin</h2>
+
+<ol>
+  <li>Upload the new version directory alongside the old one, so that <code>zc_plugins/Trademark/</code> holds both. Don't delete the old one yet; Plugin Manager needs both to offer the upgrade.</li>
+  <li><strong>Modules &rarr; Plugin Manager &rarr; Upgrade.</strong></li>
+  <li>Once it reports success, delete the old version directory.</li>
+</ol>
+
+<p>Your settings survive. The installer refreshes labels and help text to the current version but never touches a value you've set.</p>
+
+<h2 id="uninstall">Uninstalling</h2>
+
+<p><strong>Modules &rarr; Plugin Manager &rarr; Trademark &rarr; Uninstall.</strong> This removes the configuration group and its settings and the admin menu entry. No template file was ever changed, so there's nothing else to undo. Delete <code>zc_plugins/Trademark/</code> afterwards if you want the code gone too.</p>
+
+<p>To hide the mark without uninstalling, set <strong>Enable Trademark?</strong> to <code>false</code>.</p>
+
+<h2 id="trouble">Troubleshooting</h2>
+
+<h3>The mark doesn't appear</h3>
+<ul>
+  <li>Is <strong>Enable Trademark?</strong> <code>true</code>?</li>
+  <li>Is your store name set (<em>Configuration &rarr; My Store &rarr; Store Name</em>), or <strong>Trademark Text</strong> filled in? An empty name shows nothing.</li>
+  <li>View the page source and look for <code>class="tradeMark"</code>. If it's there but invisible, it's a styling matter &mdash; most often white text on a white bar. Set <strong>Text Color</strong>.</li>
+  <li>If it isn't in the source, the plugin didn't recognize your header. On a template that isn't responsive_classic or ZCA Bootstrap, or a clone that reworked the header, set a <a href="#custom">custom anchor</a>.</li>
+  <li>Is the page one your template renders without <code>html_header.php</code> and <code>tpl_main_page.php</code>? The plugin needs both notifiers. Every stock page has them.</li>
+</ul>
+
+<h3>It appears twice</h3>
+<p>Your template still carries the file-based mod's mark somewhere the plugin doesn't check for it, or you've styled a second element with the class. Search your template's files for <code>tradeMark</code>. The plugin itself never adds a mark to a page that already has one.</p>
+
+<h3>It appears on a phone but not on a tablet in landscape (or the other way round)</h3>
+<p>On a tablet, responsive_classic shows the fixed bar in portrait and an ordinary navigation row in landscape, and the plugin puts a copy in each. If one is missing, check that both <strong>Show In The Main Navigation Bar?</strong> and <strong>Show In The Mobile Header Bar?</strong> are <code>true</code>.</p>
+
+<h3>The stylesheet 404s</h3>
+<p>Zen Cart's shipped <code>zc_plugins/.htaccess</code> denies everything then explicitly re-allows <code>.css</code>, <code>.js</code> and <code>.html</code>, so on a normal Apache host the stylesheet loads. If your server ignores <code>.htaccess</code> &mdash; nginx, or Apache with <code>AllowOverride None</code> plus its own deny rule &mdash; you may need a rule permitting those types under <code>zc_plugins/</code>. The same applies to this Read Me when opened from Plugin Manager.</p>
+
+<h3>After upgrading, the old styling is still showing</h3>
+<p>Browsers cache the stylesheet for up to an hour. A hard reload (Ctrl+F5) clears it. Each plugin version lives in its own directory, so a new version is always a new URL.</p>
+
+<h2 id="compat">Compatibility</h2>
+
+<table>
+<tr><th>Zen Cart</th><td>v1.5.8 through v3.0.0-dev, one codebase, verified against all six release branches</td></tr>
+<tr><th>PHP</th><td>7.4 through 8.5</td></tr>
+<tr><th>Templates</th><td>responsive_classic and ZCA Bootstrap 3.3.0&ndash;3.8.0 out of the box, and clones of either; anything else through the custom anchor</td></tr>
+<tr><th>Database</th><td>Twelve rows in <code>configuration</code> and one group. No tables of its own.</td></tr>
+<tr><th>Assets</th><td>One stylesheet, served from the plugin directory. No JavaScript, no CDN, no external services.</td></tr>
+</table>
+
+<footer>
+<p>Trademark v2.0.0 &middot; My Zen Cart Host (dbltoe) &middot; GNU General Public License v2.0. As always, no warranty or guarantee is applied or implied. Always make backups before adding or editing any mod.</p>
+</footer>
+
+</div>
+</body>
+</html>

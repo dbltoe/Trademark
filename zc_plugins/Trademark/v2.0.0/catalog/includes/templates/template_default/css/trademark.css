@@ -1,0 +1,69 @@
+/*
+ * Trademark -- storefront stylesheet.
+ *
+ * Linked into <head> by the plugin on every page. Color, font size and font
+ * weight are NOT here: they come from the admin settings and are written as
+ * one inline rule right after this link, so they win over these defaults.
+ *
+ * To take over completely, copy this file to your template's css/ directory
+ * (includes/templates/YOUR_TEMPLATE/css/trademark.css) -- the plugin links
+ * that copy instead of this one -- and switch off "Load The Plugin
+ * Stylesheet?" if you would rather set the color and size in CSS too.
+ */
+
+/* The mark itself. float:left is what puts it ahead of the Home link in
+   responsive_classic's navigation list, whose items are inline. Inside ZCA
+   Bootstrap's navbar, a flex container, the float is ignored and the mark is
+   simply the first item. Zero margin and padding matter there too: Bootstrap
+   gives every <p> a bottom margin. */
+.tradeMark {
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+/* The optional TM / R / SM after the text. Zero line-height stops the
+   superscript pushing the navigation bar taller. */
+.tradeMark .tradeMarkSymbol {
+    font-size: 0.6em;
+    line-height: 0;
+    vertical-align: super;
+}
+
+/* responsive_classic, phones and tablets: beside the hamburger in the fixed
+   bar. No rule of its own, on purpose. The bar is emitted as
+   <div class="header Fixed"> but the template's mmenu script rewrites that to
+   class="header mm-slideout" as the page loads, so a selector on "Fixed"
+   never applies at run time. The float above is all it takes: the hamburger
+   link is floated first and the mark follows it on the same line. */
+
+/* responsive_classic, tablets. The template lays the navigation strip over
+   the fixed bar in portrait, so the strip's copy of the mark is hidden there
+   and the bar's copy shows; in landscape the template hides the bar
+   (.header{display:none} in responsive_tablet.css) and the strip becomes an
+   ordinary bar, so its copy is the one that shows. Same orientation query the
+   template itself uses. */
+@media only screen and (orientation: portrait) {
+    .tradeMark.tradeMarkTablet {
+        display: none;
+    }
+}
+
+/* ZCA Bootstrap: keep the mark clear of the toggler and the menu. */
+nav.navbar .tradeMark {
+    margin-right: 1rem;
+}
+
+/* Used only when "Show At The Top Of The Page If Nothing Matches?" is on and
+   none of the known navigation bars was found. Clears the float so the mark
+   takes its own line rather than the top-left corner of whatever follows. */
+.tradeMarkFallback {
+    overflow: hidden;
+    padding: 0.25em 0.75em;
+}
+
+.tradeMarkFallback .tradeMark {
+    float: none;
+}
