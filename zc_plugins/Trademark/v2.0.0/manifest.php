@@ -90,16 +90,12 @@ $tmLinks =
     . '<a href="' . $tmGithubUrl . '" target="_blank" rel="noopener noreferrer"'
     . ' class="btn btn-primary" role="button"'
     . ' style="margin:0 ' . $tmButtonGap . ' 0 0">GitHub</a>'
+    . ($tmForumUrl !== ''
+        ? '<a href="' . $tmForumUrl . '" target="_blank" rel="noopener noreferrer"'
+          . ' class="btn btn-primary" role="button"'
+          . ' style="margin:0 ' . $tmButtonGap . ' 0 0">Forum Support Thread</a>'
+        : '')
     . '</div>';
-
-$tmForumLink = '';
-if ($tmForumUrl !== '') {
-    $tmForumLink =
-        '<div style="margin:8px 0 0;padding:0 0 0 ' . $tmButtonGap . '">'
-        . '<a href="' . $tmForumUrl . '" target="_blank" rel="noopener noreferrer">'
-        . 'Forum Support Thread</a>'
-        . '</div>';
-}
 
 return [
     'pluginVersion' => 'v2.0.0',
@@ -110,8 +106,7 @@ return [
         . 'tablets. Works with responsive_classic and ZCA Bootstrap and their clones out '
         . 'of the box, and with any other template through a custom anchor. No template '
         . 'file is changed: install, and it is there.'
-        . $tmLinks
-        . $tmForumLink,
+        . $tmLinks,
     // Shown as the Author in Plugin Manager, and stored in
     // plugin_control.author / plugin_control_versions.author (varchar(64)).
     'pluginAuthor' => 'My Zen Cart Host (dbltoe)',
