@@ -25,14 +25,14 @@ Color, size and weight come from the admin settings and are written into the
 page as one inline rule right after the stylesheet link:
 
 ```html
-<link rel="stylesheet" href="/zc_plugins/Trademark/v2.0.0/catalog/includes/templates/template_default/css/trademark.css">
+<link rel="stylesheet" href="/zc_plugins/Trademark/v2.0.1/catalog/includes/templates/template_default/css/trademark.css">
 <style>.tradeMark{color:#FFFFFF;font-size:1em;font-weight:normal}</style>
 ```
 
 Everything else is in the stylesheet:
 
 ```
-zc_plugins/Trademark/v2.0.0/catalog/includes/templates/template_default/css/trademark.css
+zc_plugins/Trademark/v2.0.1/catalog/includes/templates/template_default/css/trademark.css
 ```
 
 It's short. The mark floats left with no margin or padding (which is what puts

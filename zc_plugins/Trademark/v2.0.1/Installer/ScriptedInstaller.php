@@ -52,6 +52,7 @@ class ScriptedInstaller extends ScriptedInstallBase
         $this->tmAddConfigurationKeys($configGroupId);
         $this->tmRegisterAdminPages($configGroupId);
         $this->tmSyncPluginControlName(false);
+        $this->tmRefreshPluginDescription();
 
         // No quotes in the message: zen_record_admin_activity() escapes them
         // on the way in and the log then shows them backslashed.
@@ -93,10 +94,43 @@ class ScriptedInstaller extends ScriptedInstallBase
         // Skipping this would leave "Trademark - Mod Not Turned On" sitting in
         // the Not Installed list permanently.
         $this->tmSyncPluginControlName(true);
+        $this->tmRefreshPluginDescription();
 
         $this->tmLog('Trademark: uninstalled. Settings removed; no template file was ever changed, so there is nothing else to undo.', 'warning');
 
         return true;
+    }
+
+    /**
+     * Save the manifest's description again, now that the Settings page has
+     * been registered (install, upgrade) or removed (uninstall).
+     *
+     * Needed on v1.5.8, v2.0 and v2.1, which store plugin_control.description
+     * only when Plugin Manager first sees the plugin, before Install, so the
+     * Settings button (built in manifest.php from the registered admin page)
+     * would never appear there. v2.2 and later rewrite the description from
+     * the manifest on every Plugin Manager visit, so this is a no-op there in
+     * effect. Core's own install/uninstall step changes only status and
+     * version, so this description stays.
+     *
+     * @return bool
+     */
+    protected function tmRefreshPluginDescription()
+    {
+        if (!defined('TABLE_PLUGIN_CONTROL')) {
+            return true;
+        }
+        $manifest = require dirname(__DIR__) . '/manifest.php';
+        if (!is_array($manifest) || !isset($manifest['pluginDescription'])) {
+            return true;
+        }
+
+        return $this->executeInstallerSql(
+            "UPDATE " . TABLE_PLUGIN_CONTROL . "
+                SET description = '" . $this->dbConn->prepare_input($manifest['pluginDescription']) . "'
+              WHERE unique_key = '" . $this->dbConn->prepare_input(self::PLUGIN_KEY) . "'
+              LIMIT 1"
+        );
     }
 
     /**

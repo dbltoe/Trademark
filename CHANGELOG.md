@@ -3,6 +3,24 @@
 All notable changes to this project are recorded here. This project follows
 [Semantic Versioning](https://semver.org/).
 
+## [2.0.1] — 2026-10-27
+
+Plugin Manager only. Nothing changes on the storefront or in the settings.
+
+### Changed
+
+- **New Settings button in Plugin Manager.** Once the plugin is installed, its
+  info panel has a Settings button that opens Configuration > Trademark
+  directly. It isn't shown before Install or after Uninstall, and it works on
+  every supported release (v1.5.8 through v3.0.0): the installer saves the
+  panel again at Install, Upgrade and Uninstall, because v1.5.8, v2.0 and
+  v2.1 otherwise keep the panel they saw first.
+- **The buttons are one row: ReadMe | Settings | Forum Thread | GitHub.**
+  "Read Me" is now "ReadMe" and "Forum Support Thread" is now "Forum
+  Thread". The buttons are a little narrower (8px side padding, 4px gaps), so
+  all four fit on one line from a 1366px-wide window up and the Author line
+  stays where it was.
+
 ## [2.0.0] — 2026-09-03
 
 **Rewritten as an encapsulated zc_plugin.** Install it from Plugin Manager and
@@ -60,5 +78,6 @@ File-based mod: replacement `tpl_header.php` for responsive_classic on Zen Cart
 1.5.7d, 1.5.8a and 2.0.0, plus instructions for editing ZCA Bootstrap's header
 by hand. Superseded by 2.0.0.
 
+[2.0.1]: https://github.com/dbltoe/Trademark/releases/tag/2.0.1
 [2.0.0]: https://github.com/dbltoe/Trademark/releases/tag/2.0.0
 [1.1.0]: https://github.com/dbltoe/Trademark/releases/tag/1.1.0

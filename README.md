@@ -1,4 +1,4 @@
-# Trademark 2.0.0
+# Trademark 2.0.1
 
 An encapsulated Zen Cart plugin that shows your trademark — your store name
 unless you say otherwise — in the navigation bar of every storefront page,

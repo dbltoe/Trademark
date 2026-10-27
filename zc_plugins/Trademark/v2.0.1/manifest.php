@@ -20,7 +20,7 @@ if (!defined('IS_ADMIN_FLAG')) {
  * where the action buttons live, so markup placed here appears exactly once,
  * right where the store owner is already looking, with no core file changed.
  *
- * The Read Me link is built from DIR_WS_CATALOG rather than hard-coded, so it
+ * The ReadMe link is built from DIR_WS_CATALOG rather than hard-coded, so it
  * works whatever the store lives at and whatever the admin directory has been
  * renamed to. Zen Cart's shipped `zc_plugins/.htaccess` denies everything then
  * explicitly re-allows `.html`, so readme.html is reachable by design.
@@ -28,10 +28,11 @@ if (!defined('IS_ADMIN_FLAG')) {
  * On v2.2 and later the description is refreshed from this file on every
  * Plugin Manager scan. On v1.5.8, v2.0 and v2.1 it is not: those releases
  * write plugin_control.description only on the INSERT that first creates the
- * row, so whatever is here the first time a store scans the plugin is what
- * that store shows for good. Nothing state-dependent belongs in it.
+ * row, and only this plugin's installer refreshes it there (at Install,
+ * Upgrade and Uninstall). The one state-dependent part, the Settings button,
+ * is handled below.
  */
-$tmPluginDir = 'zc_plugins/Trademark/v2.0.0/';
+$tmPluginDir = 'zc_plugins/Trademark/v2.0.1/';
 $tmReadmeUrl = (defined('DIR_WS_CATALOG') ? DIR_WS_CATALOG : '/') . $tmPluginDir . 'readme.html';
 $tmGithubUrl = 'https://github.com/dbltoe/Trademark';
 
@@ -75,30 +76,66 @@ if ($tmIsOff) {
     $tmName .= ' - Mod Not Turned On';
 }
 
-$tmButtonGap = '6px';
+/**
+ * The Settings button: this plugin's Configuration page, shown only once the
+ * plugin is installed. Its gID is assigned at install, so it differs from
+ * store to store and can't be written here; it's read from the admin page the
+ * installer registers (page key configTrademark). The link is relative
+ * ("index.php?cmd=configuration&gID=N") because Plugin Manager is an admin
+ * page, so it survives a domain or admin-folder rename.
+ *
+ * Zen Cart reads manifests only on the Plugin Manager page, but the lookup is
+ * still guarded so a manifest read anywhere else (no database, catalog side,
+ * CLI) just leaves the button out. On v2.2 and later this file is re-read on
+ * every Plugin Manager visit, so the button follows the install state by
+ * itself; on v1.5.8, v2.0 and v2.1 the installer saves the re-read
+ * description at Install, Upgrade and Uninstall
+ * (tmRefreshPluginDescription).
+ */
+$tmSettingsUrl = '';
+if (defined('IS_ADMIN_FLAG') && IS_ADMIN_FLAG === true && defined('TABLE_ADMIN_PAGES')
+    && isset($GLOBALS['db']) && is_object($GLOBALS['db'])) {
+    $tmPage = $GLOBALS['db']->Execute(
+        "SELECT main_page, page_params FROM " . TABLE_ADMIN_PAGES
+        . " WHERE page_key = 'configTrademark' LIMIT 1"
+    );
+    if (!$tmPage->EOF && defined($tmPage->fields['main_page'])) {
+        $tmSettingsUrl = 'index.php?cmd=' . constant($tmPage->fields['main_page'])
+            . '&' . $tmPage->fields['page_params'];
+    }
+}
 
 /**
  * Styled as buttons matching Plugin Manager's own controls, which use exactly
- * `class="btn btn-primary" role="button"`. Spacing is inline so an admin
- * theme's own .btn margin cannot change it: before = between = after.
+ * `class="btn btn-primary" role="button"`.
+ *
+ * One row: ReadMe | Settings | Forum Thread | GitHub. A second line would push
+ * the Author line and the core buttons further down the panel. Spacing is set
+ * inline, which beats any theme `.btn` margin: every gap is 4px (the wrapper
+ * supplies the space before the first button, each button the space after
+ * itself) and the side padding is 8px rather than Bootstrap's 12px, so all
+ * four fit on one line in Plugin Manager's side panel from a 1366px-wide
+ * window up.
  */
+$tmButtonGap = '4px';
+$tmButtonStyle = ' style="margin:0 ' . $tmButtonGap . ' 0 0;padding-left:8px;padding-right:8px"';
+$tmButton = static function ($url, $label, $newTab) use ($tmButtonStyle) {
+    return '<a href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '"'
+        . ($newTab ? ' target="_blank" rel="noopener noreferrer"' : '')
+        . ' class="btn btn-primary" role="button"' . $tmButtonStyle . '>' . $label . '</a>';
+};
+
 $tmLinks =
     '<div style="margin:10px 0 0;padding:0 0 0 ' . $tmButtonGap . '">'
-    . '<a href="' . $tmReadmeUrl . '" target="_blank" rel="noopener noreferrer"'
-    . ' class="btn btn-primary" role="button"'
-    . ' style="margin:0 ' . $tmButtonGap . ' 0 0">Read Me</a>'
-    . '<a href="' . $tmGithubUrl . '" target="_blank" rel="noopener noreferrer"'
-    . ' class="btn btn-primary" role="button"'
-    . ' style="margin:0 ' . $tmButtonGap . ' 0 0">GitHub</a>'
-    . ($tmForumUrl !== ''
-        ? '<a href="' . $tmForumUrl . '" target="_blank" rel="noopener noreferrer"'
-          . ' class="btn btn-primary" role="button"'
-          . ' style="margin:0 ' . $tmButtonGap . ' 0 0">Forum Support Thread</a>'
-        : '')
+    . $tmButton($tmReadmeUrl, 'ReadMe', true)
+    . ($tmSettingsUrl !== '' ? $tmButton($tmSettingsUrl, 'Settings', false) : '')
+    // Renders nothing while $tmForumUrl is empty.
+    . ($tmForumUrl !== '' ? $tmButton($tmForumUrl, 'Forum Thread', true) : '')
+    . $tmButton($tmGithubUrl, 'GitHub', true)
     . '</div>';
 
 return [
-    'pluginVersion' => 'v2.0.0',
+    'pluginVersion' => 'v2.0.1',
     'pluginName' => $tmName,
     'pluginDescription' =>
         'Shows your trademark -- your store name unless you say otherwise -- in the '

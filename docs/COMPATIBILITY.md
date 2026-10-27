@@ -194,8 +194,9 @@ the *Mod Not Turned On* notice in the name would freeze on those releases. The
 plugin's `admin/includes/functions/extra_functions/trademark_admin.php`, which
 every release loads on every admin page, corrects the stored name on the Plugin
 Manager page when it disagrees with `TRADEMARK_STATUS`, and the uninstaller puts
-the plain name back. The same reasoning is why nothing state-dependent is in
-`pluginDescription`.
+the plain name back. `pluginDescription` has the same problem: its Settings
+button depends on whether the plugin is installed, so the installer saves the
+description again at Install, Upgrade and Uninstall.
 
 ### `zen_config()` is not used
 

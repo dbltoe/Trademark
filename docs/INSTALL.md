@@ -16,7 +16,7 @@ zc_plugins/Trademark/
 Upload it so it lands at:
 
 ```
-<your store root>/zc_plugins/Trademark/v2.0.0/
+<your store root>/zc_plugins/Trademark/v2.0.1/
 ```
 
 That directory should contain `manifest.php`, `readme.html`, `changelog.txt`,
@@ -39,8 +39,9 @@ later.
 
 > Selecting the plugin shows an info panel on the right. Alongside the
 > description and the **Install / Uninstall / Disable** buttons you'll find
-> **Read Me** and **GitHub** buttons. Read Me opens the full documentation, and
-> both work whether or not the plugin is installed.
+> **ReadMe**, **Forum Thread** and **GitHub** buttons, plus **Settings** once
+> the plugin is installed. ReadMe opens the full documentation and works
+> whether or not the plugin is installed.
 
 The installer creates a **Trademark** configuration group and adds it to the
 Configuration menu. If the menu entry doesn't appear straight away, log out of
@@ -205,7 +206,7 @@ Mobile Header Bar?** are `true`.
 View source and check this URL loads:
 
 ```
-zc_plugins/Trademark/v2.0.0/catalog/includes/templates/template_default/css/trademark.css
+zc_plugins/Trademark/v2.0.1/catalog/includes/templates/template_default/css/trademark.css
 ```
 
 Zen Cart's shipped `zc_plugins/.htaccess` denies everything then explicitly
