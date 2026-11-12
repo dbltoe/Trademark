@@ -3,6 +3,20 @@
 All notable changes to this project are recorded here. This project follows
 [Semantic Versioning](https://semver.org/).
 
+## [2.0.2] — 2026-11-11
+
+### Changed
+
+- **License: GNU General Public License, version 3** (was version 2).
+- **readme.html is replaced by README.md.** The ReadMe button in Plugin
+  Manager opens it inside the admin, for superusers only, in its own window
+  (`index.php?cmd=trademark_readme`); it is no longer a public file under
+  `zc_plugins/`. The same README.md is at the root of the download.
+- Nothing changes on the storefront or in the settings.
+
+Upgrading: put the v2.0.2 folder beside the old one and click **Upgrade** in
+Admin > Modules > Plugin Manager. Your settings are kept.
+
 ## [2.0.1] — 2026-10-27
 
 Plugin Manager only. Nothing changes on the storefront or in the settings.
@@ -78,6 +92,7 @@ File-based mod: replacement `tpl_header.php` for responsive_classic on Zen Cart
 1.5.7d, 1.5.8a and 2.0.0, plus instructions for editing ZCA Bootstrap's header
 by hand. Superseded by 2.0.0.
 
+[2.0.2]: https://github.com/dbltoe/Trademark/releases/tag/2.0.2
 [2.0.1]: https://github.com/dbltoe/Trademark/releases/tag/2.0.1
 [2.0.0]: https://github.com/dbltoe/Trademark/releases/tag/2.0.0
 [1.1.0]: https://github.com/dbltoe/Trademark/releases/tag/1.1.0

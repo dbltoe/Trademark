@@ -16,10 +16,10 @@ zc_plugins/Trademark/
 Upload it so it lands at:
 
 ```
-<your store root>/zc_plugins/Trademark/v2.0.1/
+<your store root>/zc_plugins/Trademark/v2.0.2/
 ```
 
-That directory should contain `manifest.php`, `readme.html`, `changelog.txt`,
+That directory should contain `manifest.php`, `README.md`, `changelog.txt`,
 and the `Installer/`, `admin/` and `catalog/` sub-directories.
 
 Nothing goes anywhere else. The plugin doesn't drop files into your `admin/`,
@@ -39,9 +39,10 @@ later.
 
 > Selecting the plugin shows an info panel on the right. Alongside the
 > description and the **Install / Uninstall / Disable** buttons you'll find
-> **ReadMe**, **Forum Thread** and **GitHub** buttons, plus **Settings** once
-> the plugin is installed. ReadMe opens the full documentation and works
-> whether or not the plugin is installed.
+> **Forum Thread** and **GitHub** buttons, plus **Settings** once the plugin
+> is installed and, for superusers, **ReadMe**. ReadMe opens the full
+> documentation (README.md) inside the admin, in its own window, once the
+> plugin is installed; the same README.md is at the root of the download.
 
 The installer creates a **Trademark** configuration group and adds it to the
 Configuration menu. If the menu entry doesn't appear straight away, log out of
@@ -206,7 +207,7 @@ Mobile Header Bar?** are `true`.
 View source and check this URL loads:
 
 ```
-zc_plugins/Trademark/v2.0.1/catalog/includes/templates/template_default/css/trademark.css
+zc_plugins/Trademark/v2.0.2/catalog/includes/templates/template_default/css/trademark.css
 ```
 
 Zen Cart's shipped `zc_plugins/.htaccess` denies everything then explicitly

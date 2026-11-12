@@ -16,7 +16,7 @@
  * group.
  *
  * @package  Trademark
- * @license  http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
 if (!defined('IS_ADMIN_FLAG') || IS_ADMIN_FLAG !== true) {

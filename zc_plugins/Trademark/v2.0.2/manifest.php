@@ -3,7 +3,7 @@
  * Trademark -- plugin manifest.
  *
  * @package  Trademark
- * @license  http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @license  https://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
 // Only ever read by Plugin Manager, inside the admin, where this is defined.
@@ -20,10 +20,12 @@ if (!defined('IS_ADMIN_FLAG')) {
  * where the action buttons live, so markup placed here appears exactly once,
  * right where the store owner is already looking, with no core file changed.
  *
- * The ReadMe link is built from DIR_WS_CATALOG rather than hard-coded, so it
- * works whatever the store lives at and whatever the admin directory has been
- * renamed to. Zen Cart's shipped `zc_plugins/.htaccess` denies everything then
- * explicitly re-allows `.html`, so readme.html is reachable by design.
+ * ReadMe opens README.md through the plugin's own admin page
+ * (index.php?cmd=trademark_readme): behind the admin login, superusers only,
+ * in its own window. It is shown only to superusers; the page enforces that
+ * too, because Zen Cart 1.5.8-2.1 keep the description they were last given.
+ * Forum Thread and GitHub go off-site, so they open in a new window with
+ * rel="noopener noreferrer" (zencart/zencart#8031).
  *
  * On v2.2 and later the description is refreshed from this file on every
  * Plugin Manager scan. On v1.5.8, v2.0 and v2.1 it is not: those releases
@@ -32,8 +34,14 @@ if (!defined('IS_ADMIN_FLAG')) {
  * Upgrade and Uninstall). The one state-dependent part, the Settings button,
  * is handled below.
  */
-$tmPluginDir = 'zc_plugins/Trademark/v2.0.1/';
-$tmReadmeUrl = (defined('DIR_WS_CATALOG') ? DIR_WS_CATALOG : '/') . $tmPluginDir . 'readme.html';
+$tmReadmeUrl = 'index.php?cmd=trademark_readme';
+// Zen Cart 3.0.0 reads every manifest on every admin page, early (template resolver),
+// before admin access is set up: zen_is_superuser() there is a fatal "Undefined constant
+// SUPERUSER_PROFILE" that takes down the whole admin. Ask only once that exists.
+$tmShowReadme = true;
+if (function_exists('zen_is_superuser') && defined('SUPERUSER_PROFILE')) {
+    $tmShowReadme = zen_is_superuser();
+}
 $tmGithubUrl = 'https://github.com/dbltoe/Trademark';
 
 /**
@@ -127,7 +135,7 @@ $tmButton = static function ($url, $label, $newTab) use ($tmButtonStyle) {
 
 $tmLinks =
     '<div style="margin:10px 0 0;padding:0 0 0 ' . $tmButtonGap . '">'
-    . $tmButton($tmReadmeUrl, 'ReadMe', true)
+    . ($tmShowReadme ? $tmButton($tmReadmeUrl, 'ReadMe', true) : '')
     . ($tmSettingsUrl !== '' ? $tmButton($tmSettingsUrl, 'Settings', false) : '')
     // Renders nothing while $tmForumUrl is empty.
     . ($tmForumUrl !== '' ? $tmButton($tmForumUrl, 'Forum Thread', true) : '')
@@ -135,7 +143,7 @@ $tmLinks =
     . '</div>';
 
 return [
-    'pluginVersion' => 'v2.0.1',
+    'pluginVersion' => 'v2.0.2',
     'pluginName' => $tmName,
     'pluginDescription' =>
         'Shows your trademark -- your store name unless you say otherwise -- in the '
