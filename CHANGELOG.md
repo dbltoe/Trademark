@@ -7,7 +7,6 @@ All notable changes to this project are recorded here. This project follows
 
 ### Changed
 
-- **License: GNU General Public License, version 3** (was version 2).
 - **readme.html is replaced by README.md.** The ReadMe button in Plugin
   Manager opens it inside the admin, for superusers only, in its own window
   (`index.php?cmd=trademark_readme`); it is no longer a public file under

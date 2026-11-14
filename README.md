@@ -1,6 +1,6 @@
 # Trademark
 
-Version 2.0.2 · Zen Cart 1.5.8 through 3.0.0 · PHP 7.4 through 8.5 · GPL v3 · by My Zen Cart Host (dbltoe)
+Version 2.0.2 · Zen Cart 1.5.8 through 3.0.0 · PHP 7.4 through 8.5 · GPL v2 · by My Zen Cart Host (dbltoe)
 
 Shows your trademark — your store name unless you say otherwise — in the navigation bar of every storefront page. No template file is changed.
 
@@ -216,7 +216,7 @@ Removing the plugin itself later is a separate, simpler matter: see Uninstalling
 
 Your settings survive. The installer refreshes labels and help text to the current version but never touches a value you've set.
 
-**Version 2.0.2** moves the plugin to the GNU General Public License, version 3, and replaces readme.html with this guide: the ReadMe button in Plugin Manager now opens it inside the admin, for superusers, in its own window. Nothing changes on the storefront or in the settings.
+**Version 2.0.2** replaces readme.html with this guide: the ReadMe button in Plugin Manager now opens it inside the admin, for superusers, in its own window. Nothing changes on the storefront or in the settings.
 
 **Version 2.0.1** adds a Settings button to the plugin's Plugin Manager panel, shown once the plugin is installed, and puts the panel's buttons on one row: ReadMe, Settings, Forum Thread, GitHub. Nothing changes on the storefront or in the settings.
 
@@ -272,8 +272,8 @@ As always, no warranty or guarantee is applied or implied. Always make backups b
 
 ## Changelog
 
-See `CHANGELOG.md`. Version 2.0.2 moves the plugin to the GNU General Public License, version 3, and replaces readme.html with this guide, opened from the ReadMe button in Plugin Manager.
+See `CHANGELOG.md`. Version 2.0.2 replaces readme.html with this guide, opened from the ReadMe button in Plugin Manager.
 
 ## License
 
-Trademark is free software under the GNU General Public License, version 3 (https://www.gnu.org/licenses/gpl-3.0.html); the full text is in `LICENSE`. Copyright © 2026 My Zen Cart Host (dbltoe).
+Trademark is free software under the GNU General Public License, version 2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html); the full text is in `LICENSE`. Copyright © 2026 My Zen Cart Host (dbltoe).
